@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LimpioYa | Sistema de Gestión de Lavandería</title>
+<meta name="description" content="Presentación técnica del proyecto LimpioYa, sistema de gestión de lavandería basado en la Norma IEEE 830.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===== BARRA DE PROGRESO DE SCROLL ===== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner container">
+    <a href="#presentacion" class="navbar__brand">
+      <span class="navbar__logo-dot"><i class="fa-solid fa-shirt"></i></span>
+      LimpioYa
+    </a>
+
+    <nav class="navbar__nav" id="navMenu">
+      <a href="#presentacion" class="nav-link">Inicio</a>
+      <a href="#introduccion" class="nav-link">Introducción</a>
+      <a href="#problema" class="nav-link">Problema</a>
+      <a href="#objetivos" class="nav-link">Objetivos</a>
+      <a href="#diagramas" class="nav-link">Diagramas</a>
+      <a href="#arquitectura" class="nav-link">Arquitectura</a>
+      <a href="#identidad" class="nav-link">Identidad</a>
+      <a href="#prototipos" class="nav-link">Prototipos</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <span class="theme-toggle__thumb">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </span>
+      </button>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 1. PRESENTACIÓN ===== -->
+<section id="presentacion" class="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="bubble bubble--1"></span>
+    <span class="bubble bubble--2"></span>
+    <span class="bubble bubble--3"></span>
+    <span class="bubble bubble--4"></span>
+    <span class="bubble bubble--5"></span>
+  </div>
+
+  <div class="container hero__grid">
+    <div class="hero__content reveal">
+      <span class="eyebrow"><i class="fa-solid fa-file-shield"></i> Especificación de Requisitos · Norma IEEE 830</span>
+      <h1 class="hero__title">Limpio<span>Ya</span></h1>
+      <p class="hero__subtitle">Sistema de Gestión de Lavandería</p>
+      <p class="hero__desc">Sustentación técnica del proyecto de software desarrollado bajo los lineamientos de la Norma IEEE&nbsp;830, para la digitalización de los procesos operativos de negocios de lavandería.</p>
+
+      <dl class="hero__meta">
+        <div class="hero__meta-item">
+          <dt>Autor</dt>
+          <dd>Kevin Ricardo Moreno Medalles</dd>
+        </div>
+        <div class="hero__meta-item" data-editable>
+          <dt>Institución</dt>
+          <dd contenteditable="true" spellcheck="false">Servicio Nacional de Aprendizaje – SENA</dd>
+        </div>
+        <div class="hero__meta-item" data-editable>
+          <dt>Asignatura</dt>
+          <dd contenteditable="true" spellcheck="false">Análisis y Desarrollo de Software (ADSO)</dd>
+        </div>
+        <div class="hero__meta-item" data-editable>
+          <dt>Docente</dt>
+          <dd contenteditable="true" spellcheck="false">Nombre del instructor</dd>
+        </div>
+        <div class="hero__meta-item">
+          <dt>Fecha</dt>
+          <dd id="fechaActual">2026</dd>
+        </div>
+      </dl>
+
+      <a href="#introduccion" class="btn btn--primary hero__cta">
+        Ver presentación <i class="fa-solid fa-arrow-down"></i>
+      </a>
+    </div>
+
+    <div class="hero__visual reveal">
+      <div class="hero__image-frame">
+        <div class="logo-placeholder">
+          <img src="img/logo_limpioya.png" alt="Logo de LimpioYa">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#introduccion" class="scroll-indicator" aria-label="Desplazarse hacia abajo">
+    <i class="fa-solid fa-chevron-down"></i>
+  </a>
+</section>
+
+<main>
+
+  <!-- ===== 2. INTRODUCCIÓN ===== -->
+  <section id="introduccion" class="section">
+    <div class="container">
+      <span class="section-tag reveal">01 — Introducción</span>
+      <h2 class="section-title reveal">Un vistazo general al proyecto</h2>
+
+      <p class="lead reveal intro-lead">
+        <strong>LimpioYa</strong> es una plataforma pensada para modernizar la manera en que las lavanderías locales gestionan sus operaciones. Su propósito es conectar en un mismo entorno digital a dos actores clave del negocio: el cliente, que necesita saber en qué va su pedido y pagar en línea; y el administrador, que requiere visibilidad y control sobre pedidos, servicios y operación del negocio.
+      </p>
+
+      <div class="intro-cards">
+        <div class="mini-card reveal">
+          <i class="fa-solid fa-user"></i>
+          <h3>Cliente</h3>
+          <p>Registra pedidos, hace seguimiento en tiempo real y paga en línea.</p>
+        </div>
+        <div class="mini-card reveal">
+          <i class="fa-solid fa-user-shield"></i>
+          <h3>Administrador</h3>
+          <p>Gestiona usuarios, servicios, precios y reportes del negocio.</p>
+        </div>
+      </div>
+
+      <p class="reveal intro-footnote">
+        El desarrollo del sistema se apoyó en la Norma IEEE 830 para estructurar los requisitos de software, priorizando la construcción de un Producto Mínimo Viable capaz de cubrir los procesos esenciales del negocio antes de escalar a funcionalidades más avanzadas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 3 & 4. SITUACIÓN Y PREGUNTA PROBLEMA ===== -->
+  <section id="problema" class="section section--alt">
+    <div class="container">
+      <span class="section-tag reveal">02 — Problema</span>
+      <h2 class="section-title reveal">La situación que originó el proyecto</h2>
+
+      <div class="problema-grid">
+        <div class="problema-text reveal">
+          <h3><i class="fa-solid fa-triangle-exclamation"></i> Situación problema</h3>
+          <p>
+            En buena parte de las lavanderías locales, el cliente solo puede saber si su pedido está listo llamando por teléfono o acercándose personalmente al local. Esta dependencia genera incomodidad, confusión con las fechas de entrega y una pérdida de tiempo que afecta la percepción del servicio.
+          </p>
+          <p>
+            Puertas adentro, el panorama no es distinto: el control de los pedidos suele llevarse en cuadernos, planillas físicas o conversaciones de WhatsApp. Ese manejo manual da paso a errores administrativos, dificulta rastrear en qué etapa está cada prenda y termina traduciéndose en pérdidas de información e ineficiencias operativas.
+          </p>
+          <p>
+            Sin una herramienta digital especializada, estos negocios encuentran limitada su capacidad de crecer, competir y ofrecerle al cliente una experiencia acorde con las expectativas actuales.
+          </p>
+        </div>
+
+        <div class="pregunta-box reveal">
+          <i class="fa-solid fa-circle-question"></i>
+          <h3>Pregunta problema</h3>
+          <p>¿Cómo digitalizar el registro, seguimiento y pago de pedidos en una lavandería local, de manera que se reduzcan los errores administrativos y el cliente pueda conocer en tiempo real el estado de sus prendas?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5 & 6. OBJETIVOS ===== -->
+  <section id="objetivos" class="section">
+    <div class="container">
+      <span class="section-tag reveal">03 — Objetivos</span>
+      <h2 class="section-title reveal">Hacia dónde apunta el proyecto</h2>
+
+      <div class="objetivo-general reveal">
+        <i class="fa-solid fa-bullseye"></i>
+        <div>
+          <h3>Objetivo general</h3>
+          <p>Desarrollar una aplicación web que permita a las lavanderías gestionar sus pedidos de forma eficiente y digitalizada, brindando a los clientes la posibilidad de consultar en tiempo real el estado y la fecha de entrega de sus prendas, con el fin de optimizar la comunicación y la experiencia de uso.</p>
+        </div>
+      </div>
+
+      <h3 class="objetivos-esp-title reveal">Objetivos específicos</h3>
+      <div class="objetivos-grid">
+        <div class="objetivo-item reveal">
+          <span class="objetivo-num">01</span>
+          <p>Permitir a los empleados registrar pedidos detallando prendas, servicios solicitados y fecha estimada de entrega.</p>
+        </div>
+        <div class="objetivo-item reveal">
+          <span class="objetivo-num">02</span>
+          <p>Implementar un módulo de seguimiento que permita al cliente consultar el estado de su pedido: en proceso, listo o entregado.</p>
+        </div>
+        <div class="objetivo-item reveal">
+          <span class="objetivo-num">03</span>
+          <p>Generar notificaciones automáticas que informen al cliente sobre cambios en el estado y la fecha de entrega de su pedido.</p>
+        </div>
+        <div class="objetivo-item reveal">
+          <span class="objetivo-num">04</span>
+          <p>Ofrecer reportes y estadísticas de ingresos, clientes frecuentes y volumen de pedidos como apoyo a la toma de decisiones.</p>
+        </div>
+        <div class="objetivo-item reveal">
+          <span class="objetivo-num">05</span>
+          <p>Integrar un módulo de pagos en línea compatible con pasarelas locales colombianas (PSE, tarjeta y billetera digital).</p>
+        </div>
+        <div class="objetivo-item reveal">
+          <span class="objetivo-num">06</span>
+          <p>Generar de forma automática comprobantes de pago y facturas electrónicas al completar cada transacción.</p>
+        </div>
+        <div class="objetivo-item reveal">
+          <span class="objetivo-num">07</span>
+          <p>Implementar un módulo de agenda para programar la recogida y entrega de prendas a domicilio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. DIAGRAMAS ===== -->
+  <section id="diagramas" class="section section--alt">
+    <div class="container">
+      <span class="section-tag reveal">04 — Diagramas</span>
+      <h2 class="section-title reveal">Modelado del sistema</h2>
+      <p class="section-intro reveal">Espacios reservados para incorporar los diagramas propios del proyecto. Cada imagen puede ampliarse haciendo clic sobre ella.</p>
+
+      <div class="diagram-grid">
+
+        <figure class="diagram-card reveal" data-lightbox>
+          <div class="diagram-card__img">
+            <img src="img/casos_de_uso.jpg" alt="Diagrama de casos de uso" loading="lazy">
+            <span class="diagram-card__zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </div>
+          <figcaption>
+            <h3>Casos de uso</h3>
+            <p>Interacciones entre los roles Cliente, Empleado y Administrador con las funcionalidades del sistema.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="diagram-card reveal" data-lightbox>
+          <div class="diagram-card__img">
+            <img src="img/diagrama_de_procesos.png" alt="Diagrama de procesos" loading="lazy">
+            <span class="diagram-card__zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </div>
+          <figcaption>
+            <h3>Diagrama de procesos</h3>
+            <p>Flujo de los procesos clave: registro, creación de pedido, pago, agenda de entrega y gestión administrativa.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="diagram-card reveal" data-lightbox>
+          <div class="diagram-card__img">
+            <img src="img/arquitectura.png" alt="Diagrama de arquitectura" loading="lazy">
+            <span class="diagram-card__zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </div>
+          <figcaption>
+            <h3>Diagrama de arquitectura</h3>
+            <p>Representación de las capas de presentación, negocio y datos, y su comunicación mediante API REST.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="diagram-card reveal" data-lightbox>
+          <div class="diagram-card__img">
+            <img src="img/modelo-conceptual.png" alt="Modelo conceptual" loading="lazy">
+            <span class="diagram-card__zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </div>
+          <figcaption>
+            <h3>Modelo conceptual</h3>
+            <p>Entidades y relaciones de alto nivel identificadas a partir de los requerimientos del negocio.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="diagram-card reveal" data-lightbox>
+          <div class="diagram-card__img">
+            <img src="img/modelo_logico.png" alt="Modelo lógico entidad relación" loading="lazy">
+            <span class="diagram-card__zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </div>
+          <figcaption>
+            <h3>Modelo lógico (ER)</h3>
+            <p>Diagrama entidad-relación con tablas, llaves primarias/foráneas y relaciones para MySQL.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. ARQUITECTURA Y DESARROLLO ===== -->
+  <section id="arquitectura" class="section">
+    <div class="container">
+      <span class="section-tag reveal">05 — Arquitectura y desarrollo</span>
+      <h2 class="section-title reveal">Cómo está construido el sistema</h2>
+
+      <!-- Arquitectura -->
+      <div class="dev-block reveal">
+        <h3><i class="fa-solid fa-layer-group"></i> Arquitectura del proyecto</h3>
+        <p>LimpioYa se organiza en una <strong>arquitectura de tres capas</strong>: la capa de presentación, construida con HTML5, CSS3, JavaScript y Bootstrap 5, gestiona la interacción con clientes, empleados y administradores; la capa de negocio, desarrollada en Node.js y Express, expone una API REST que concentra la lógica del sistema —registro de pedidos, pagos, notificaciones y control de acceso—; y la capa de datos, sobre MySQL, almacena toda la información a través del ORM Sequelize.</p>
+        <div class="layers-mini">
+          <span><i class="fa-solid fa-display"></i> Presentación</span>
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+          <span><i class="fa-solid fa-server"></i> Negocio (API REST)</span>
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+          <span><i class="fa-solid fa-database"></i> Datos (MySQL)</span>
+        </div>
+        <div class="justification">
+          <i class="fa-solid fa-circle-check"></i>
+          <p><strong>Justificación:</strong> esta separación permite avanzar en cada capa de forma independiente —mejorar la interfaz sin tocar el backend, o ajustar la base de datos sin afectar las pantallas—, mantiene el proyecto ordenado y facilita el mantenimiento, ya que un error puntual solo exige revisar el módulo implicado. Al ser un modelo ampliamente enseñado y adoptado en el desarrollo web actual, resulta además el punto de partida más adecuado para un proyecto de este nivel académico y deja abierta la puerta a un crecimiento futuro ordenado.</p>
+        </div>
+      </div>
+
+      <!-- Patrones -->
+      <div class="dev-block reveal">
+        <h3><i class="fa-solid fa-diagram-project"></i> Patrones de desarrollo utilizados</h3>
+        <div class="patterns-grid">
+          <div class="pattern-card">
+            <span class="pattern-card__badge">MVC</span>
+            <p>Separa el sistema en Modelo, Vista y Controlador. El frontend cumple el rol de Vista, el backend el de Controlador y la base de datos el de Modelo.</p>
+          </div>
+          <div class="pattern-card">
+            <span class="pattern-card__badge">Repository</span>
+            <p>Aísla el acceso a la base de datos del resto de la lógica de negocio, centralizando las consultas relacionadas con cada entidad.</p>
+          </div>
+          <div class="pattern-card">
+            <span class="pattern-card__badge">DAO</span>
+            <p>Define una interfaz específica de acceso a datos para cada entidad del sistema (usuarios, pedidos, servicios), aislando esa lógica.</p>
+          </div>
+        </div>
+        <div class="justification">
+          <i class="fa-solid fa-circle-check"></i>
+          <p><strong>Justificación:</strong> la combinación de estos tres patrones mantiene el código organizado y con responsabilidades claras, favorece la mantenibilidad al aislar la lógica de acceso a datos —de modo que un cambio de motor de base de datos afectaría únicamente a los repositorios— y prepara al sistema para escalar sin necesidad de reestructurar lo ya construido.</p>
+        </div>
+      </div>
+
+      <!-- Estándares -->
+      <div class="dev-block reveal">
+        <h3><i class="fa-solid fa-code"></i> Estándares de programación utilizados</h3>
+        <p>El proyecto sigue convenciones de nomenclatura consistentes: <code>camelCase</code> para variables, atributos y métodos; <code>PascalCase</code> para clases, controladores, servicios y repositorios; y <code>snake_case</code> para tablas y campos en la base de datos. A nivel de estilo se emplean 2 espacios de indentación en JavaScript, líneas de máximo 100 caracteres y llaves obligatorias en las estructuras de control, junto con los principios <strong>DRY</strong>, <strong>KISS</strong> y <strong>YAGNI</strong> como guía general de diseño del código.</p>
+        <div class="justification">
+          <i class="fa-solid fa-circle-check"></i>
+          <p><strong>Justificación:</strong> nombrar cada elemento de forma predecible y coherente reduce la curva de aprendizaje del código para cualquier persona que lo revise, y aplicar principios como DRY, KISS y YAGNI evita duplicación y complejidad innecesaria, lo que se traduce en un código más legible, fácil de depurar y de calidad consistente en todo el proyecto.</p>
+        </div>
+      </div>
+
+      <!-- Metodología -->
+      <div class="dev-block reveal">
+        <h3><i class="fa-solid fa-arrows-spin"></i> Metodología</h3>
+        <p>El desarrollo de LimpioYa se gestionó bajo <strong>SCRUM</strong>, un marco de trabajo ágil que organiza el avance del proyecto en ciclos cortos e iterativos (sprints), permitiendo entregar funcionalidades de forma incremental, validar cada módulo a medida que se completa y ajustar prioridades conforme evoluciona el entendimiento del negocio.</p>
+      </div>
+
+      <!-- Roles SCRUM -->
+      <div class="dev-block reveal">
+        <h3><i class="fa-solid fa-users"></i> Roles SCRUM</h3>
+        <p style="color:var(--gris-texto);max-width:700px;">Al tratarse de un proyecto desarrollado por una sola persona, <strong>Kevin Ricardo Moreno Medalles</strong> asumió simultáneamente los tres roles definidos por el marco SCRUM.</p>
+        <div class="scrum-grid">
+          <div class="scrum-card">
+            <div class="scrum-card__icon"><i class="fa-solid fa-crown"></i></div>
+            <h4>Product Owner</h4>
+            <p>Definió los requisitos, prioridades y el alcance funcional del producto.</p>
+            <span class="scrum-card__name">Kevin Ricardo Moreno Medalles</span>
+          </div>
+          <div class="scrum-card">
+            <div class="scrum-card__icon"><i class="fa-solid fa-compass"></i></div>
+            <h4>Scrum Master</h4>
+            <p>Organizó los sprints, gestionó el proceso ágil y removió obstáculos de avance.</p>
+            <span class="scrum-card__name">Kevin Ricardo Moreno Medalles</span>
+          </div>
+          <div class="scrum-card">
+            <div class="scrum-card__icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h4>Development Team</h4>
+            <p>Diseñó, programó, probó y documentó cada uno de los módulos del sistema.</p>
+            <span class="scrum-card__name">Kevin Ricardo Moreno Medalles</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 9. MANUAL DE IDENTIDAD CORPORATIVA ===== -->
+  <section id="identidad" class="section section--alt">
+    <div class="container">
+      <span class="section-tag reveal">06 — Identidad corporativa</span>
+      <h2 class="section-title reveal">Manual de identidad</h2>
+
+      <!-- Logo -->
+      <div class="identity-block reveal">
+        <h3><i class="fa-solid fa-icons"></i> Logo</h3>
+        <div class="logo-block">
+          <div class="logo-placeholder">
+            <img src="img/logo_limpioya.png" alt="Logo de LimpioYa">
+          </div>
+          <div class="logo-desc" data-editable>
+            <p contenteditable="true" spellcheck="false">El logotipo de LimpioYa está compuesto por un isotipo que representa una lavadora en accion, acompañada de un tic de verificación azul que evoca la confianza. Transmite los valores de la marca: limpieza, modernidad, frescura y confianza.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paleta -->
+      <div class="identity-block reveal">
+        <h3><i class="fa-solid fa-palette"></i> Paleta de colores</h3>
+        <div class="palette-grid">
+          <div class="color-card">
+            <span class="color-swatch" style="background:#1B6CA8"></span>
+            <h4>Azul Principal</h4>
+            <code>#1B6CA8</code>
+            <p>Encabezados, botones primarios y elementos de énfasis.</p>
+          </div>
+          <div class="color-card">
+            <span class="color-swatch" style="background:#00B4D8"></span>
+            <h4>Azul Acento</h4>
+            <code>#00B4D8</code>
+            <p>Íconos, elementos decorativos, gradientes y fondos de sección.</p>
+          </div>
+          <div class="color-card">
+            <span class="color-swatch" style="background:#2E86C1"></span>
+            <h4>Azul Secundario</h4>
+            <code>#2E86C1</code>
+            <p>Subtítulos, bordes de tarjetas y elementos secundarios.</p>
+          </div>
+          <div class="color-card">
+            <span class="color-swatch color-swatch--border" style="background:#FFFFFF"></span>
+            <h4>Blanco Puro</h4>
+            <code>#FFFFFF</code>
+            <p>Fondos principales y texto sobre fondo azul.</p>
+          </div>
+          <div class="color-card">
+            <span class="color-swatch color-swatch--border" style="background:#F2F4F7"></span>
+            <h4>Gris Neutro</h4>
+            <code>#F2F4F7</code>
+            <p>Fondos alternos de secciones y tarjetas de contenido.</p>
+          </div>
+          <div class="color-card">
+            <span class="color-swatch" style="background:#555555"></span>
+            <h4>Gris Texto</h4>
+            <code>#555555</code>
+            <p>Texto de cuerpo, descripciones y texto secundario.</p>
+          </div>
+          <div class="color-card">
+            <span class="color-swatch" style="background:#222222"></span>
+            <h4>Negro Texto</h4>
+            <code>#222222</code>
+            <p>Texto principal y títulos de alto contraste.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tipografía -->
+      <div class="identity-block reveal">
+        <h3><i class="fa-solid fa-font"></i> Tipografía</h3>
+        <div class="typo-grid">
+          <div class="typo-card">
+            <span class="typo-card__sample" style="font-family:'Poppins',sans-serif;">Aa</span>
+            <h4>Poppins <em>— Principal</em></h4>
+            <p>Tipografía de palo seco geométrica usada en títulos, encabezados y elementos de marca. Se eligió por su carácter moderno y su excelente legibilidad en pantallas, reforzando la identidad tecnológica del proyecto.</p>
+          </div>
+          <div class="typo-card">
+            <span class="typo-card__sample" style="font-family:'Roboto',sans-serif;">Aa</span>
+            <h4>Roboto <em>— Secundaria</em></h4>
+            <p>Tipografía humanista utilizada en el texto de cuerpo, descripciones e interfaces. Se seleccionó por su claridad en bloques largos de texto y su amplia compatibilidad en distintos dispositivos.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 10. PROTOTIPOS ===== -->
+  <section id="prototipos" class="section">
+    <div class="container">
+      <span class="section-tag reveal">07 — Prototipos</span>
+      <h2 class="section-title reveal">Prototipos en Figma</h2>
+      <p class="section-intro reveal">Enlaces a los prototipos navegables del proyecto. Los botones son fácilmente editables.</p>
+
+      <div class="proto-grid">
+        <div class="proto-card reveal">
+          <div class="proto-card__icon"><i class="fa-solid fa-desktop"></i></div>
+          <h3>Prototipo de Escritorio</h3>
+          <p>Experiencia de administrador y empleado optimizada para pantallas grandes.</p>
+          <a href="https://www.figma.com/design/WMd0WBIoEcJIMVJ2YJOdCE/LimpioYa---Prototipo-Escritorio?node-id=0-1&t=pWm1AAckYeVv8304-1" target="_blank" rel="noopener" class="btn btn--outline proto-btn">
+            <i class="fa-brands fa-figma"></i> Ver prototipo de escritorio
+          </a>
+        </div>
+        <div class="proto-card reveal">
+          <div class="proto-card__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>Prototipo Móvil</h3>
+          <p>Experiencia del cliente pensada para el seguimiento de pedidos desde el celular.</p>
+          <a href="https://www.figma.com/design/6rvQIomX5a31r7PgJhnztn/LimpioYa---Prototipo-Movil?node-id=0-1&t=pOFjvDV0ZED4Bllm-1" target="_blank" rel="noopener" class="btn btn--outline proto-btn">
+            <i class="fa-brands fa-figma"></i> Ver prototipo móvil
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="navbar__logo-dot"><i class="fa-solid fa-shirt"></i></span>
+      LimpioYa
+    </div>
+    <p>Especificación de Requisitos de Software — Norma IEEE 830</p>
+    <p class="footer__author">Kevin Ricardo Moreno Medalles · <span id="footerYear">2026</span></p>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX MODAL ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar imagen"><i class="fa-solid fa-xmark"></i></button>
+  <figure class="lightbox__content">
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
